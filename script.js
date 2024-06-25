@@ -3,11 +3,14 @@ function calcularMMC(num1, num2) {
 }
 
 function calcularMDC(num1, num2) {
-    while (num2 !== 0) {
-        let mdc = num2;
-        mdc = num1 % num2;
+    let a = num1;
+    let b = num2;
+    while (b !== 0) {
+        let temp = b;
+        b = a % b;
+        a = temp;
     }
-    return mdc;
+    return a
 }
 
 const readline = require('readline');
