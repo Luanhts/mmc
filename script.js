@@ -1,6 +1,13 @@
-
 function calcularMMC(num1, num2) {
     return (num1 * num2) / calcularMDC(num1, num2);
+}
+
+function calcularMDC(num1, num2) {
+    while (num2 !== 0) {
+        let mdc = num2;
+        mdc = num1 % num2;
+    }
+    return mdc;
 }
 
 const readline = require('readline');
@@ -24,6 +31,8 @@ rl.question('Escolha uma opção: ', (opcao) => {
                 let num2 = parseInt(valor2);
                 let mmc = calcularMMC(num1, num2);
                 console.log(`O MMC de ${num1} e ${num2} é: ${mmc}`);
+                let mdc = calcularMDC(num1, num2);
+                console.log(`O MDC é: ${mdc}`)
                 rl.close();
             });
         });
